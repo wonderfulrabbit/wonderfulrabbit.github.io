@@ -2,6 +2,7 @@ data:
     character:
         darwin:
             name: Darwin
+            player: Kagami
             level: 1
             attributes:
                 culture: Dwarf
@@ -98,6 +99,7 @@ data:
                     damage: 1d6 + WIS
         midas:
             name: Midas
+            player: Prof. Midas
             level: 1
             attributes:
                 culture: Human
@@ -178,6 +180,7 @@ data:
                     effect: One condition on an ally ends.
         buk:
             name: Buk
+            player: Marley
             level: 1
             attributes:
                 culture: Goblin

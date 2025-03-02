@@ -54,7 +54,7 @@ function changeCharacter(name){
 	const classData = yaml.data.class[character.attributes.class];
 	const title = document.querySelector('#nametitle');
 	
-	title.innerHTML = name.toUpperCase();
+	title.innerHTML = `${name.toUpperCase()} (${character.player})`;
 	updateBasicInfo(character);
 	updateStats(character.stats);
 	updateDefences(character.stats, classData, character.level);
