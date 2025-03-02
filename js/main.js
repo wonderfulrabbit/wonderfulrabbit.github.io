@@ -154,7 +154,7 @@ function createEntryElement(entry, user, stats) {
     const summary = document.createElement("summary");
     summary.setAttribute("role", "button");
     summary.classList.add("secondary");
-    summary.textContent = `${entry.name} #️⃣ $${entry.command}`;
+    summary.textContent = `${entry.name} #️⃣ ${entry.command}`;
 
     const article = elementMaker(entry);
     const footer = createCopyButton(() => {
