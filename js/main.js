@@ -181,7 +181,7 @@ function createCopyButton(onClick) {
 }
 
 function aliasMaker(ability, user, stats) {
-    const { command, name, labels = [], target = "", limited = "", special = "", 
+    const { command, name, labels = [], target = "", limited = "", special = "", trigger = "",
 		attack = "", hit = "", effect = "", damage = "" } = ability;
 
     const title = `## ${user} uses ${name}\\n`;
@@ -190,6 +190,7 @@ function aliasMaker(ability, user, stats) {
 	const limitedText = limited ? `**Limited:** ${limited}\\n` : "";
 	const targetText = target ? `**Target:** ${target}\\n` : "";
 	const specialText = special ? `**Special:** ${special}\\n` : "";
+	const triggerText = trigger ? `**Trigger:** ${trigger}\\n` : "";
 	const attackText = attack ? `**Attack:** ${attack}\\n` : "";
 	const hitText = hit ? `**Hit:** ${hit}\\n` : "";
     const effectText = effect ? `**Effect:** ${effect}\\n` : "";
@@ -205,6 +206,7 @@ function aliasMaker(ability, user, stats) {
 		`Limited = "${limitedText}"`,
 		`Target = "${targetText}"`,
 		`Special = "${specialText}"`,
+		`Trigger = "${triggerText}"`,
 		`Attack = "${attackText}"`,
 		`Hit = "${hitText}"`,
 		`Effect = "${effectText}"`,
@@ -212,7 +214,7 @@ function aliasMaker(ability, user, stats) {
 		`AttackRoll = ${atk.text}`,
 		`dmgroll = ${dmg.roll}`,
 		`DamageRoll = ${dmg.text}`,
-		`Output = Title + Label + Limited + Target + Special + Attack + Effect + AttackRoll + DamageRoll`,
+		`Output = Title + Label + Limited + Target + Special + Trigger + Attack + Effect + AttackRoll + DamageRoll`,
 		`</drac2>`,
 		`-desc "{{Output}}"`
 	].join("\n");
@@ -251,6 +253,7 @@ function elementMaker(e) {
 		e.limited ? `<b>Limited:</b> ${e.limited}` : "",
         e.target ? `<b>Target:</b> ${e.target}` : "", 
         e.special ? `<b>Special:</b> ${e.special}` : "", 
+		e.trigger ? `<b>Trigger:</b> ${e.trigger}` : "",
         e.attack ? `<b>Attack:</b> ${e.attack}` : "", 
         e.hit ? `<b>Hit:</b> ${e.hit}` : "", 
         e.effect ? `<b>Effect:</b> ${e.effect}` : ""

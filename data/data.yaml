@@ -4,9 +4,9 @@ data:
             name: Darwin
             level: 1
             attributes:
-                alignment: Civilization
-                class: Priest
                 culture: Dwarf
+                class: Priest
+                alignment: Civilization
             stats:
                 str:
                     value: 1
@@ -100,9 +100,9 @@ data:
             name: Midas
             level: 1
             attributes:
-                alignment: Savagery
-                class: Commander
                 culture: Human
+                class: Commander
+                alignment: Savagery
             stats:
                 str:
                     value: 0
@@ -176,6 +176,93 @@ data:
                         - Hard save to replenish
                     limited: Only available when the escalation die is 2+.
                     effect: Decrease the escalation die by 1. Then your Guild can each use a recovery.
+        buk:
+            name: Buk
+            level: 1
+            attributes:
+                culture: Goblin
+                class: Rogue
+                alignment: Thievery
+            stats:
+                str:
+                    value: 3
+                    adj: Can carry their things
+                    desc: My arms can carry my dagger AND my money at the same time.
+                dex:
+                    value: 5
+                    adj: Talented physical performer
+                    desc: I can easily juggle with a lot of coin and do a flip at the same time.
+                con:
+                    value: 2
+                    adj: Damaged bones
+                    desc: I m use to fell a lot and my bone are weak now.
+                int:
+                    value: 0
+                    adj: Struggling reader
+                    desc: i can read word i swaire.
+                wis:
+                    value: 4
+                    adj: Big dreamer
+                    desc: all i got to do it to follows the plans to get big.
+                cha:
+                    value: 1
+                    adj: Bad liar
+                    desc:  ii can lie yee yes sometime....
+            abilities:
+                dirtyattack:
+                    name: Dirty attack
+                    command: dirtyatk
+                    effect: Once per round in close combat, when you hit a foe faced with one or more of your allies, you can deal extra damage.
+                    damage: 1d4
+                trapsense:
+                    name: Trap sense
+                    command: trapsen
+                    effect: If your check involving a trap is a natural even failure, you can reroll. If a trap’s attack against you is a natural odd roll, you can force the trap to reroll the attack once.
+                momentum:
+                    name: Momentum
+                    command: momentum
+                    effect: You gain momentum by hitting an enemy with an attack. You lose momentum when you are hit by an attack. 
+            attacks:
+                evasivestrike:
+                    name: Evasive Strike
+                    command: evastrike
+                    labels:
+                        - Scheme
+                        - Mayor action
+                    attack: DEX vs FORT
+                    hit: Weapon + Dex damage
+                    effect: If you hit on a natural even, you gain a +2 bonus to Fort and Ref against the next attack that targets you (no joy if it’s an attack vs. Will)
+                    damage: d8 + DEX
+                flyingblade:
+                    name: Flying Blade
+                    command: fblade
+                    labels:
+                        - Scheme
+                        - Mayor action
+                    special: Ranged attack only
+                    attack: DEX vs FORT
+                    hit: Weapon + Dex damage
+                    effect:  If your natural attack roll is even, you can use your Dirty Attack damage bonus
+                    damage: d8 + DEX
+                rollwithit:
+                    name: Roll With It
+                    command: rollit
+                    labels:
+                        - Scheme
+                        - Mayor action
+                    special: Needs momentum.
+                    trigger: An attack hits you
+                    effect: You only take half damage from that attack
+                tumblingstrike:
+                    name: Tumbling Strike
+                    command: tumbstrike
+                    labels:
+                        - Scheme
+                        - Mayor action
+                    special: You can take two move actions along with this attack, one before, and one immediately after. The foe can’t strike you back during this attack.
+                    attack: DEX vs FORT
+                    hit: Weapon + Dex damage
+                    damage: d8 + DEX
     class:
         Warrior:
             hp: 8
