@@ -124,8 +124,8 @@ function updateTooltips(stats, classData, level) {
     };
 
     Object.entries(saves).forEach(([id, statsArr]) => {
-        const baseValue = classData[id] || 0; // Ensure baseValue exists
-        const statValues = statsArr.map(stat => stats[stat]?.value || 0); // Ensure stats exist
+        const baseValue = classData[id] || 0;
+        const statValues = statsArr.map(stat => stats[stat]?.value || 0);
         const total = baseValue + middle(...statValues);
 
         document.querySelector(`#${id}`).innerHTML = total;
@@ -154,7 +154,7 @@ function createEntryElement(entry, user, stats) {
     const summary = document.createElement("summary");
     summary.setAttribute("role", "button");
     summary.classList.add("secondary");
-    summary.textContent = entry.name;
+    summary.textContent = `${entry.name} ($${entry.command})`;
 
     const article = elementMaker(entry);
     const footer = createCopyButton(() => {
@@ -181,12 +181,14 @@ function createCopyButton(onClick) {
 }
 
 function aliasMaker(ability, user, stats) {
-    const { command, name, labels = [], target = "", special = "", 
+    const { command, name, labels = [], target = "", limited = "", special = "", 
 		attack = "", hit = "", effect = "", damage = "" } = ability;
 
     const title = `## ${user} uses ${name}\\n`;
     const label = labels.length ? `**${labels.join(' 🔸 ')}**\\n\\n` : "";
-    const targetText = target ? `**Target:** ${target}\\n` : "";
+    
+	const limitedText = limited ? `**Limited:** ${limited}\\n` : "";
+	const targetText = target ? `**Target:** ${target}\\n` : "";
 	const specialText = special ? `**Special:** ${special}\\n` : "";
 	const attackText = attack ? `**Attack:** ${attack}\\n` : "";
 	const hitText = hit ? `**Hit:** ${hit}\\n` : "";
@@ -196,10 +198,11 @@ function aliasMaker(ability, user, stats) {
 	const dmg = processDamage(damage, stats);
 
 	return  [
-		`!alias ${command} embed`,
+		`$alias ${command} embed`,
 		`<drac2>`,
 		`Title = "${title}"`,
 		`Label = "${label}"`,
+		`Limited = "${limitedText}"`,
 		`Target = "${targetText}"`,
 		`Special = "${specialText}"`,
 		`Attack = "${attackText}"`,
@@ -209,7 +212,7 @@ function aliasMaker(ability, user, stats) {
 		`AttackRoll = ${atk.text}`,
 		`dmgroll = ${dmg.roll}`,
 		`DamageRoll = ${dmg.text}`,
-		`Output = Title + Label + Target + Special + Attack + Effect + AttackRoll + DamageRoll`,
+		`Output = Title + Label + Limited + Target + Special + Attack + Effect + AttackRoll + DamageRoll`,
 		`</drac2>`,
 		`-desc "{{Output}}"`
 	].join("\n");
@@ -245,6 +248,7 @@ function elementMaker(e) {
     const article = document.createElement("article");
     article.innerHTML = [
         e.labels ? `<b>${e.labels.join(' 🔸 ')}</b>` : "",
+		e.limited ? `<b>Limited:</b> ${e.limited}` : "",
         e.target ? `<b>Target:</b> ${e.target}` : "", 
         e.special ? `<b>Special:</b> ${e.special}` : "", 
         e.attack ? `<b>Attack:</b> ${e.attack}` : "", 

@@ -128,8 +128,46 @@ data:
                     value: 5
                     adj: Master manipulator
                     desc: I can lie as naturally as i breathe, motivate people to extremes.
-            abilities: empty
-            attacks: empty
+            abilities:
+                leadpoints:
+                    name: Command Points
+                    command: leapoints
+                    effect: You start each combat with 1 CP. Excess CP go away at the end of the combat.
+                fightfront:
+                    name: Fight from the Front
+                    command: figfront
+                    effect: When you hit with an attack, gain 1d4 CP. When you miss with a natural even roll, gain 1 LP.
+                weightodds:
+                    name: Weigh the Odds
+                    command: weiodds
+                    effect: Take your action to gain 1d4 + Cha CP.
+            attacks:
+                tryagain:
+                    name: Try Again
+                    command: tryagain
+                    labels:
+                        - Command
+                        - Cost 2 CP
+                        - Once per round
+                    effect: One ally gets advantage on an attack. If either roll comes up a 20, you gain 1 CP.
+                tacticalstrike:
+                    name: Tactical Strike
+                    command: tacstrike
+                    labels:
+                        - Tactic
+                        - Minor action
+                        - Save to replenish
+                    effect: One ally can make an attack as a free action, with your Cha as a damage bonus.
+                outmanoeuvre:
+                    name: Outmanoeuvre
+                    command: outmanov
+                    labels:
+                        - Tactic
+                        - Minor action
+                    limited: You can only use this tactic when you have 0 command points.
+                    target: Foe with the highest Will defence
+                    attack: CHA vs WILL 
+                    hit: You gain 1 CP.
     class:
         Warrior:
             hp: 8
