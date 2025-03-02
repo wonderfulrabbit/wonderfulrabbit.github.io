@@ -1,1 +1,195 @@
-"Hello World" 
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.blue.min.css">
+	<link rel="stylesheet" href="style.css">
+	
+	<title>Character Sheets</title>
+</head>
+<body>
+
+<div id="super-container" class="container">
+
+<header class="container">
+	<nav>
+		<ul>
+			<li><h1 id="nametitle" style="margin-bottom: 0;">...</h1></li>
+		</ul>
+		<ul>
+			<details class="dropdown">
+				<summary><i class="fa-solid fa-user"></i></summary>
+				<ul id="characterdropdown" dir="rtl">
+					<li><a href="#">...</a></li>
+					<li><a href="#">...</a></li>
+				</ul>
+			</details>
+		</ul>
+	</nav>
+</header>
+<main>
+
+<!-- Navigation -->
+<div class="overflow-auto">
+<div role="group">
+	<button class="nav-button" aria-current="true" data-target="basic">
+		<i class="fa-solid fa-user"></i>
+	</button>
+	<button class="nav-button" aria-current="false" data-target="stats">
+		<i class="fa-solid fa-chart-simple"></i>
+	</button>
+	<button class="nav-button" aria-current="false" data-target="defences">
+		<i class="fa-solid fa-shield-halved"></i>
+	</button>
+	<button class="nav-button" aria-current="false" data-target="equipment">
+		<i class="fa-solid fa-sack-dollar"></i>
+	</button>
+	<button class="nav-button" aria-current="false" data-target="abilities">
+		<i class="fa-solid fa-brain"></i>
+	</button>
+	<button class="nav-button" aria-current="false" data-target="attacks">
+		<i class="fa-solid fa-hand-fist"></i>
+	</button>
+</div>
+</div>
+
+<div id="content">
+
+	<div id="basic" class="content-section active">
+		<fieldset role="group">
+			<button class="secondary">Name</button>
+			<div id="name" class="txt4">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Level</button>
+			<div id="level" class="txt1">...</div>
+			<div id="level-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Culture</button>
+			<div id="culture" class="txt4">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Class</button>
+			<div id="class" class="txt4">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Alignment</button>
+			<div id="alignment" class="txt4">...</div>
+		</fieldset>
+	</div>
+	
+	<div id="stats" class="content-section">
+		<fieldset role="group">
+			<button class="secondary">Strength</button>
+			<div id="str" class="txt1">...</div>
+			<div id="str-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Dexterity</button>
+			<div id="dex" class="txt1">...</div>
+			<div id="dex-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Constitution</button>
+			<div id="con" class="txt1">...</div>
+			<div id="con-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Intelligence</button>
+			<div id="int" class="txt1">...</div>
+			<div id="int-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Wisdom</button>
+			<div id="wis" class="txt1">...</div>
+			<div id="wis-text" class="txt3">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Charisma</button>
+			<div id="cha" class="txt1">...</div>
+			<div id="cha-text" class="txt3">...</div>
+		</fieldset>
+	</div>
+	
+	<div id="defences" class="content-section">
+		<fieldset role="group">
+			<button class="secondary">Max Health</button>
+			<div id="hp" class="txt1">...</div>
+			<div id="hp" class="txt3">
+				( <mark id="hpclass">Class</mark> + <mark class="con">Con</mark> ) x ( 2 + <mark class="lvl">Level</mark> )
+			</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Recoveries</button>
+			<div class="txt2">Max: <mark id="recmax"></mark></div>
+			<div class="txt2">Dice: <mark id="recdice"></mark></div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Fortitude</button>
+			<div id="fort" class="txt1">...</div>
+			<div class="txt3">
+				<mark id="fortbase">Class</mark> + middle( <mark class="str">Str</mark>, <mark class="dex">Dex</mark>, <mark class="con">Con</mark> )
+			</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Reflex</button>
+			<div id="ref" class="txt1">...</div>
+			<div class="txt3">
+				<mark id="refbase">Class</mark> + middle( <mark class="dex">Dex</mark>, <mark class="con">Con</mark>, <mark class="wis">Wis</mark> )
+			</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Will</button>
+			<div id="will" class="txt1">...</div>
+			<div class="txt3">
+				<mark id="willbase">Class</mark> + middle( <mark class="int">Int</mark>, <mark class="wis">Wis</mark>, <mark class="cha">Cha</mark> )
+			</div>
+		</fieldset>
+	</div>
+	
+	<div id="equipment" class="content-section">
+		<fieldset role="group">
+			<button class="secondary">Coin</button>
+			<div id="coin" class="txt4">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Lifestyle</button>
+			<div id="lifestyle" class="txt4">...</div>
+		</fieldset>
+		<fieldset role="group">
+			<button class="secondary">Kit</button>
+			<div id="kit" class="txt4">...</div>
+		</fieldset>
+		
+		<fieldset role="group">
+			<button class="secondary">Backpack</button>
+		</fieldset>
+		
+		<fieldset role="group">
+			<textarea name="read-only" readonly>Empty</textarea>
+		</fieldset>
+	</div>
+	
+	<div id="abilities" class="content-section">
+
+	</div>
+	
+	<div id="attacks" class="content-section">
+
+	</div>
+	
+</div>
+	
+</main>
+
+<footer> </footer>
+
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="js/main.js"></script>
+</html>
