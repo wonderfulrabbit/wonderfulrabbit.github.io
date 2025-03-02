@@ -26,7 +26,7 @@ dropdown.addEventListener("click", function (event) {
 });
 
 async function loadData() {
-	const response = await fetch("data/data.yaml"); 
+	const response = await fetch("../data/data.yaml"); 
 	const yamlText = await response.text();
 	yaml = jsyaml.load(yamlText);
 	
