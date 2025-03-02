@@ -46,8 +46,8 @@ data:
                     command: mercy
                     effect: When you use any ability that lets you or an ally use a recovery, it also adds hit points equal to triple your level.
                 protection:
-                    command: protection
                     name: Protection Domain
+                    command: protection
                     effect: Once per combat, you can affect two additional allies when you utter a prayer as a sermon.
                 ritual:
                     name: Ritual Magic
