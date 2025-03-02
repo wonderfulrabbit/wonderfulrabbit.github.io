@@ -1,0 +1,59 @@
+#super-container{
+	max-width: 750px;
+}
+
+header.container {
+	padding: 1rem;
+}
+
+main.container {
+	padding-top: 0;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+[role=group] > button {
+	flex: 1;
+}
+
+[data-tooltip]:not(a,button,input) {
+	border-bottom: 0px;
+}
+
+details summary[role=button] {
+	margin-bottom: 0px;
+}
+
+mark {
+	padding: 5px;
+}
+
+.txt1, .txt2, .txt3, .txt4 {
+	border-radius: var(--pico-border-radius);
+	background-color: var(--pico-form-element-background-color);
+	border: var(--pico-form-element-border-color) 1px solid !important;
+	font-weight: 400;
+	padding: 15px;
+}
+.txt1 {
+	flex: 1;
+	text-align: center;
+}
+.txt2 {
+	flex: 2;
+	text-align: center;
+}
+.txt3 {
+	flex: 3;
+	text-align: center;
+}
+.txt4 {
+	flex: 4;
+}
+

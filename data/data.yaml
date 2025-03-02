@@ -1,0 +1,169 @@
+data:
+    character:
+        darwin:
+            name: Darwin
+            level: 1
+            attributes:
+                alignment: Civilization
+                class: Priest
+                culture: Dwarf
+            stats:
+                str:
+                    value: 1
+                    adj: Struggles with common tasks
+                    desc: Whenever I need to open a jar of jam, I always have to ask for help.
+                dex:
+                    value: 0
+                    adj: Clumsy, blames luck
+                    desc: Some people call me clumsy. Others call me unlucky. Why not both?
+                con:
+                    value: 3
+                    adj: Not very sturdy
+                    desc: You wouldn't hit an old dwarf like me, would you? Please don't because I can't take much of it
+                int:
+                    value: 2
+                    adj: Innocently trusting
+                    desc: I naively believe in the good of everyone. Nobody is beyond redemption. Hopefully. Surely.
+                wis:
+                    value: 5
+                    adj: Enlightened in the Monastery
+                    desc: I spent years training as a Priest in the Monastery, studying matters both spiritual and worldly
+                cha:
+                    value: 4
+                    adj: Friendly and good mediator
+                    desc: I am well known for my ability to mediate in a conflict and tend to get along well with everyone.
+            abilities:
+                healingword:
+                    name: Healing Word
+                    command: healing
+                    labels:
+                        - Prayer
+                        - Minor action
+                        - Twice per combat
+                    effect: You or one ally within arm’s reach can use a recovery.
+                mercy:
+                    name: Mercy Domain
+                    command: mercy
+                    effect: When you use any ability that lets you or an ally use a recovery, it also adds hit points equal to triple your level.
+                protection:
+                    command: protection
+                    name: Protection Domain
+                    effect: Once per combat, you can affect two additional allies when you utter a prayer as a sermon.
+                ritual:
+                    name: Ritual Magic
+                    command: ritual
+                    effect: Outside of combat, you can perform prayers as rituals. To do so, start with a prayer and describe how you want to creatively adapt it. Then perform a short montage where each member of your Guild contributes to the preparations. Finally, make a check to determine its success. Regardless of the outcome, the prayer is expended.
+            attacks:
+                blessconfession:
+                    name: Bless (Confession)
+                    command: bless
+                    labels:
+                        - Prayer
+                        - Minor action
+                        - Twice per combat
+                    effect: One ally gains a +2 attack bonus until the end of the combat.
+                blesssermon:
+                    name: Bless (Sermon)
+                    command: blessmulti
+                    labels:
+                        - Prayer
+                        - Minor action
+                        - Once per combat
+                    effect: The Guild gains a +1 attack bonus until the end of the combat.
+                curewound:
+                    name: Cure Wounds
+                    command: curewound
+                    labels:
+                        - Prayer
+                        - Minor action
+                        - Once per combat
+                    effect: You or an ally can use a free recovery.
+                hammerfaith:
+                    name: Hammer of Faith
+                    command: hamfaith
+                    labels:
+                        - Prayer
+                        - Mayor action
+                        - Unlimited uses
+                    effect: Until the end of the combat, your attacks use d12s as their base weapon damage dice.
+                javelinfaith:
+                    name: Javelin of Faith
+                    command: javfaith
+                    labels:
+                        - Prayer
+                        - Mayor action
+                        - Unlimited uses
+                    attack: WIS vs REF
+                    hit: 1d6 + WIS damage
+                    damage: 1d6 + WIS
+        midas:
+            name: Midas
+            level: 1
+            attributes:
+                alignment: Savagery
+                class: Commander
+                culture: Human
+            stats:
+                str:
+                    value: 0
+                    adj: Weak fighter
+                    desc: I wouldn't hurt a fly, I'd lose.
+                dex:
+                    value: 2
+                    adj: Experienced with blades.
+                    desc: I know my way around a knife or two.
+                con:
+                    value: 1
+                    adj: Sickly and fragile
+                    desc: A military background combined with an noble education makes my brain my weapon.
+                int:
+                    value: 4
+                    adj: Strategic and disciplined
+                    desc: A military background combined with an noble education makes my brain my weapon
+                wis:
+                    value: 3
+                    adj: Cautious yet distrustful
+                    desc: Past defeats have taught me lessons but I struggle to trust what I can't see.
+                cha:
+                    value: 5
+                    adj: Master manipulator
+                    desc: I can lie as naturally as i breathe, motivate people to extremes.
+            abilities: empty
+            attacks: empty
+    class:
+        Warrior:
+            hp: 8
+            dice: 10
+            fort: 15
+            ref: 10
+            will: 10
+        Rogue:
+            hp: 6
+            dice: 8
+            fort: 12
+            ref: 12
+            will: 10
+        Priest:
+            hp: 7
+            dice: 8
+            fort: 14
+            ref: 11
+            will: 11
+        Mage:
+            hp: 6
+            dice: 6
+            fort: 10
+            ref: 10
+            will: 12
+        Scholar:
+            hp: 7
+            dice: 8
+            fort: 12
+            ref: 10
+            will: 11
+        Commander:
+            hp: 7
+            dice: 8
+            fort: 12
+            ref: 10
+            will: 12
