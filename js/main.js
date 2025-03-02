@@ -141,6 +141,8 @@ function updateEntries(containerId, entries, user, stats) {
     const container = document.querySelector(containerId);
     container.innerHTML = "";
 
+	if (!entries) return;
+
     Object.values(entries).forEach(entry => {
         container.appendChild(createEntryElement(entry, user, stats));
     });
