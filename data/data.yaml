@@ -168,14 +168,14 @@ data:
                     target: Foe with the highest Will defence
                     attack: CHA vs WILL 
                     hit: You gain 1 CP.
-                justcalm:
-                    name: Just Stay Calm
-                    command: justcalm
+                enforceclarity:
+                    name: Enforce Clarity
+                    command: enfclarity
                     labels:
                         - Tactic
-                        - Hard save to replenish
-                    limited: Only available when the escalation die is 2+.
-                    effect: Decrease the escalation die by 1. Then your Guild can each use a recovery.
+                        - Save to replenish
+                        - Minor action
+                    effect: One condition on an ally ends.
         buk:
             name: Buk
             level: 1
