@@ -143,6 +143,30 @@ data:
                     name: Weigh the Odds
                     command: weiodds
                     effect: Take your action to gain 1d4 + Cha CP.
+                armourskls:
+                    name: Armour Skills
+                    command: armskills
+                    effect: >
+                        When a foe attacks you and rolls a
+                        natural 1 or 2, you gain 1 CP.
+                batcaptain:
+                    name: Battle Captain
+                    command: batcaptain
+                    effect: >
+                        Once per combat when you have
+                        any CPs left after giving a command,
+                        you can use another command on a
+                        different ally’s go before the start of
+                        your next go.
+                marttraining
+                    name: Martial training
+                    command: martraining
+                    effect: >
+                        You can replace Str with Dex
+                        when fighting with one-handed
+                        weapons. You gain 1 CP
+                        whenever you roll a natural 18 or 19
+                        with an attack.
             attacks:
                 tryagain:
                     name: Try Again
@@ -200,7 +224,7 @@ data:
                     adj: Damaged bones
                     desc: I m use to fell a lot and my bone are weak now.
                 int:
-                    value: 0
+                    value: 1
                     adj: Struggling reader
                     desc: i can read word i swaire.
                 wis:
@@ -208,7 +232,7 @@ data:
                     adj: Big dreamer
                     desc: all i got to do it to follows the plans to get big.
                 cha:
-                    value: 1
+                    value: 0
                     adj: Bad liar
                     desc:  ii can lie yee yes sometime....
             abilities:
@@ -266,6 +290,15 @@ data:
                     attack: DEX vs FORT
                     hit: Weapon + Dex damage
                     damage: d8 + DEX
+        bun:
+            name: Bun
+            player: Azure
+            level: 1
+            attributes:
+                culture: Beastfolk
+                class: Mage
+                alignment: Nature
+            
     class:
         Warrior:
             hp: 8
