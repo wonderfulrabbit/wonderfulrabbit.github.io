@@ -146,27 +146,15 @@ data:
                 armourskls:
                     name: Armour Skills
                     command: armskills
-                    effect: >
-                        When a foe attacks you and rolls a
-                        natural 1 or 2, you gain 1 CP.
+                    effect: When a foe attacks you and rolls a natural 1 or 2, you gain 1 CP.
                 batcaptain:
                     name: Battle Captain
                     command: batcaptain
-                    effect: >
-                        Once per combat when you have
-                        any CPs left after giving a command,
-                        you can use another command on a
-                        different ally’s go before the start of
-                        your next go.
-                marttraining
+                    effect: Once per combat when you have any CPs left after giving a command, you can use another command on a different ally’s go before the start of your next go.
+                marttraining:
                     name: Martial training
                     command: martraining
-                    effect: >
-                        You can replace Str with Dex
-                        when fighting with one-handed
-                        weapons. You gain 1 CP
-                        whenever you roll a natural 18 or 19
-                        with an attack.
+                    effect: You can replace Str with Dex when fighting with one-handed weapons. You gain 1 CP whenever you roll a natural 18 or 19 with an attack.
             attacks:
                 tryagain:
                     name: Try Again
@@ -298,7 +286,31 @@ data:
                 culture: Beastfolk
                 class: Mage
                 alignment: Nature
-            
+            stats:
+                str:
+                    value: 0
+                    adj: Weak at fighting
+                    desc: Bruh, I would lose in a fist fight with a kid
+                dex:
+                    value: 5
+                    adj: Old
+                    desc: I think I'm a grandfather now... *get off my lawn!*
+                con:
+                    value: 2
+                    adj: Soft
+                    desc: Soft as a Pillow
+                int:
+                    value: 1
+                    adj: Arcane researcher
+                    desc: Curiosity with the arcane combined with tradition sure helps
+                wis:
+                    value: 4
+                    adj: Has a Phd
+                    desc: Lived long enough to know lots of things and got me my PhD in Alfheim University
+                cha:
+                    value: 0
+                    adj: Has game
+                    desc: Hello Ladies *wink*
     class:
         Warrior:
             hp: 8
