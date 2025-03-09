@@ -1,14 +1,12 @@
 import { changeCharacter } from "./character.js";
 
 export function initializeDropdown() {
-    const dropdown = document.getElementById("characterdropdown");
+    const characterOptions = document.querySelectorAll('.character-select option');
 
-    dropdown.addEventListener("click", function (event) {
-        const clickedElement = event.target;
-        if (clickedElement.tagName === "A") {
-            const characterName = clickedElement.getAttribute("data-target");
-            changeCharacter(characterName);
-            dropdown.closest("details").removeAttribute("open");
-        }
+    characterOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            characterOptions.forEach(opt => opt.classList.remove('selected'));
+            button.classList.add('selected');
+        });
     });
 }

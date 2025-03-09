@@ -1,15 +1,17 @@
 export function initializeNavigation() {
-    const buttons = document.querySelectorAll(".nav-button");
-    const sections = document.querySelectorAll(".content-section");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const target = this.getAttribute("data-target");
-            sections.forEach(section => section.classList.remove("active"));
-            document.getElementById(target).classList.add("active");
-
-            buttons.forEach(btn => btn.setAttribute("aria-current", "false"));
-            this.setAttribute("aria-current", "true");
-        });
+    const navButtons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('.section');
+    
+    navButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and sections
+        navButtons.forEach(btn => btn.classList.remove('active-btn'));
+        sections.forEach(section => section.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding section
+        button.classList.add('active-btn');
+        const sectionId = button.id.replace('btn-', 'section-');
+        document.getElementById(sectionId).classList.add('active');
+      });
     });
 }

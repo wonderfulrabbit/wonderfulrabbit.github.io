@@ -1,0 +1,42 @@
+warrior:
+    name: Warrior
+    hp: 8
+    dice: 10
+    fort: 15
+    ref: 10
+    will: 10
+rogue:
+    name: Rogue
+    hp: 6
+    dice: 8
+    fort: 12
+    ref: 12
+    will: 10
+priest:
+    name: Priest
+    hp: 7
+    dice: 8
+    fort: 14
+    ref: 11
+    will: 11
+mage:
+    name: Priest
+    hp: 6
+    dice: 6
+    fort: 10
+    ref: 10
+    will: 12
+scholar:
+    name: Scholar
+    hp: 7
+    dice: 8
+    fort: 12
+    ref: 10
+    will: 11
+commander:
+    name: Commander
+    hp: 7
+    dice: 8
+    fort: 12
+    ref: 10
+    will: 12

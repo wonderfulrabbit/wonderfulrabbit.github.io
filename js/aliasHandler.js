@@ -1,6 +1,6 @@
 export function aliasMaker(ability, user, stats) {
     const { command, name, labels = [], target = "", limited = "", special = "", trigger = "",
-        attack = "", hit = "", effect = "", damage = "" } = ability;
+        attack = "", hit = "", miss = "", effect = "", damage = "" } = ability;
 
     const title = `## ${user} uses ${name}\\n`;
     const label = labels.length ? `**${labels.join(' 🔸 ')}**\\n\\n` : "";
@@ -11,6 +11,7 @@ export function aliasMaker(ability, user, stats) {
     const triggerText = trigger ? `**Trigger:** ${trigger}\\n` : "";
     const attackText = attack ? `**Attack:** ${attack}\\n` : "";
     const hitText = hit ? `**Hit:** ${hit}\\n` : "";
+    const missText = hit ? `**Miss:** ${miss}\\n` : "";
     const effectText = effect ? `**Effect:** ${effect}\\n` : "";
 
     const atk = processAttack(attack, stats);
@@ -27,6 +28,7 @@ export function aliasMaker(ability, user, stats) {
         `Trigger = "${triggerText}"`,
         `Attack = "${attackText}"`,
         `Hit = "${hitText}"`,
+        `Miss = "${missText}"`,
         `Effect = "${effectText}"`,
         `atkroll = ${atk.roll}`,
         `AttackRoll = ${atk.text}`,
