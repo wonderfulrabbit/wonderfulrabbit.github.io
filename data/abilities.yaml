@@ -1,0 +1,368 @@
+darwin:
+    passives:
+        prayers:
+            name: Prayers
+            command: prayerrule
+            labels:
+                - Rule
+            effect: > 
+                You get to pick 4 prayers. You can change the prayers you have picked after each
+                proper rest. 
+        ritualmagic:
+            name: Ritual Magic
+            command: ritual
+            labels:
+                - Rule
+                - Outside of combat
+            effect: You can perform your prayers as rituals.
+        ritual:
+            name: Ritual
+            command: ritualrule
+            labels:
+                - Rule
+            effect: >
+                To cast a spell as a ritual, you start with a regular spell you know. Then you tell
+                the table what you are trying to accomplish and gather necessary ingredients for the
+                ritual. Then go through a mini-montage where every adventurer narrates their
+                contribution. Then make a check. No matter the outcome, the spell is expended until 
+                your next full proper rest. On a success, the ritual works as intended. Choose
+                outcomes that are outgrowths of the spell's normal effects. The effects don’t have
+                to play within the usual constraints of the magic system, and they don't have to be
+                taken as a precedent for future rituals. Failure should fail forward as usual.
+        mercy:
+            name: Mercy Domain
+            command: mercy
+            labels:
+                - Greater domain
+            effect: >
+                When you use any ability that lets you or an ally use a recovery, it also adds hit
+                points equal to triple your level.
+        protection:
+            name: Protection Domain
+            command: protection
+            labels:
+                - Lesser domain
+            effect: >
+                Once per combat, you can affect two additional allies when you utter a prayer as a
+                sermon.
+    actives:
+        healingword:
+            name: Healing Word
+            command: healing
+            labels:
+                - Prayer
+                - Minor action
+                - Twice per combat
+            effect: You or one ally within arm's reach can use a recovery.
+        bless:
+            name: Bless
+            command: blessprayer
+            labels:
+                - Prayer
+                - Minor action
+                - Once between rests
+            limited: 
+            effect: >
+                As a Confession, one ally gains a +2 attack bonus until the end of the combat. As 
+                a Sermon, the Guild gains a +1 attack bonus until the end of the combat
+        curewound:
+            name: Cure Wounds
+            command: curewound
+            labels:
+                - Prayer
+                - Minor action
+                - Once between rests
+            effect: You or an ally can use a free recovery.
+        hammerfaith:
+            name: Hammer of Faith
+            command: hamfaith
+            labels:
+                - Prayer
+                - Mayor action
+                - Once between rests
+            effect: > 
+                Until the end of the combat, your attacks use d12s as their base weapon damage 
+                dice.
+        javelinfaith:
+            name: Javelin of Faith
+            command: javfaith
+            labels:
+                - Prayer
+                - Mayor action
+                - Unlimited uses
+            attack: WIS vs REF
+            hit: 1d6 + WIS damage
+            damage: 1d6 + WIS
+        shieldfaith:
+            name: Shield of Faith
+            command: shieldfaith
+            labels:
+                - Prayer
+                - Minor action
+                - Once between rests
+            effect: >
+                As a Confession, one ally gains a +2 bonus to Fort this combat. As 
+                a Sermon, The Guild gains a +1 bonus to Fort this combat
+        spiritsrighteous:
+            name: Spirits of the Righteous
+            command: spiritsright
+            labels:
+                - Prayer
+                - Mayor action
+                - Once per combat
+            attack: WIS vs WILL
+            hit: >
+                4d6 + Wis damage, and your ally with the fewest hit points gains a +4 bonus to 
+                Fort until the end of your next go.
+            miss: >
+                Your ally with the fewest hit points gains a +2 bonus to Fort until the end of
+                your next go.
+            damage: 4d6 + WIS
+        exorcism:
+            name: Exorcism
+            command: exorcism
+            labels:
+                - Prayer
+                - Mayor action
+                - Once between rests
+            target:  1d4 (un)death or diabolic aligned foes, each with 45 HP or fewer.
+            attack: WIS + CHA vs WILL
+            hit: >
+                The foe is dazed and confused (easy save ends). Hit by 4+, deals 1d6 + Wis damage.
+                Hit by 8+, against non-minions, damage equal to half the foe's maximum hit
+                points, and dazed and confused. Against minions, the 8+ result now destroys
+                4 of them. Hit by 12+ or natural 20, Against non-minions, the foe is destroyed.
+                Against minions, the +12 result now destroys 8 of them.
+        mercyinvocation:
+            name: Mercy Invocation
+            command: merinvocation
+            labels:
+                - Invocation
+                - Free action
+                - Twice between rests
+            effect: > 
+                This combat, the first Healing Word you utter allows the target to use a free 
+                recovery instead of spending one.
+        protectioninvocation:
+            name: Protection Invocation
+            command: proinvocation
+            labels:
+                - Invocation
+                - Free action
+                - Once between rests
+            effect: This combat, crits against you and your Guild deal normal damage instead.
+midas:
+    passives:
+        leadpoints:
+            name: Command Points
+            command: leapoints
+            labels:
+                - Rule
+            effect: You start each combat with 1 CP. At the end of the combat, excess CP go away
+        tactics:
+            name: Tactics
+            command: tactics
+            labels: 
+                - Rule
+            effect: >
+                Tactics have immediate effect during your go so you don’t have to wait around for an
+                ally's go to use them.
+        replenishabilities:
+            name: Replenish Abilities
+            command: replenish
+            labels: 
+                - Rule
+            effect: >
+                Replenish abilities will be available to you again before getting a proper rest,
+                you just have to roll to find out when. Post combat, make your replenish rolls
+                for any appropriate abilities. If you make it, the ability is yours to command again.
+                If you miss, the ability isn't available for the next combat. After that, it's back
+                again on its own, no need to roll.
+        fightfront:
+            name: Fight from the Front
+            command: figfront
+            labels:
+                - Passive
+            effect: >
+                When you hit with an attack, gain 1d4 CP. When you miss with a natural even roll,
+                gain 1 LP.
+        armourskls:
+            name: Armour Skills
+            command: armskills
+            labels:
+                - Talent
+                - Unlimited uses
+            effect: When a foe attacks you and rolls a natural 1 or 2, you gain 1 CP.
+        batcaptain:
+            name: Battle Captain
+            command: batcaptain
+            labels:
+                - Talent
+                - Once per combat
+            effect: >
+                When you have any CPs left after giving a command, you can use another
+                command on a different ally's go before the start of your next go.
+        marttraining:
+            name: Martial training
+            command: martraining
+            labels:
+                - Talent
+                - Unlimited uses
+            effect: >
+                You can replace Str with Dex when fighting with one-handed weapons. You 
+                gain 1 CP whenever you roll a natural 18 or 19 with an attack.
+    actives:
+        weightodds:
+            name: Weigh the Odds
+            command: weiodds
+            labels:
+                - Mayor action
+                - Unlimited uses
+            effect: Gain 1d4 + Cha CP.
+        tryagain:
+            name: Try Again
+            command: tryagain
+            labels:
+                - Command
+                - Cost 2 CP
+                - During ally's go
+                - Once per round
+            effect: One ally gets advantage on an attack. If either roll comes up a 20, you gain 1 CP.
+        tacticalstrike:
+            name: Tactical Strike
+            command: tacstrike
+            labels:
+                - Tactic
+                - Minor action
+                - Save to replenish
+            effect: One ally can make an attack as a free action, with your Cha as a damage bonus.
+        outmanoeuvre:
+            name: Outmanoeuvre
+            command: outmanov
+            labels:
+                - Tactic
+                - Minor action
+                - Unlimited uses
+            limited: You can only use this tactic when you have 0 command points.
+            target: Foe with the highest Will defence
+            attack: CHA vs WILL 
+            hit: You gain 1 CP.
+        enforceclarity:
+            name: Enforce Clarity
+            command: enfclarity
+            labels:
+                - Tactic
+                - Save to replenish
+                - Minor action
+            effect: One condition on an ally ends.
+buk:
+    passives:
+        dirtyattack:
+            name: Dirty attack
+            command: dirtyatk
+            labels:
+                - Rule
+                - Once per round
+            effect: >
+                When you hit a foe faced with one or more of your allies, you can deal 1d4 extra 
+                damage.
+            damage: 1d6
+        trapsense:
+            name: Trap sense
+            command: trapsen
+            labels:
+                - Rule
+            effect: >
+                If your check involving a trap is a natural even failure, you can reroll.
+                If a trap's attack against you is a natural odd roll, you can force the trap 
+                to reroll the attack once.
+        momentum:
+            name: Momentum
+            command: momentum
+            labels:
+                - Rule
+            effect: >
+                You gain momentum by hitting an enemy with an attack. You lose momentum 
+                when you are hit by an attack.
+        schemes:
+            name: Schemes
+            command: schemes
+            labels:
+                - Rule
+            effect:  >
+                You have 4 schemesYou can swap schemes whenever you do level up, or
+                whenever you're not actually mid-charter.
+        swashbuckle:
+            name: Swashbuckle
+            command: swashbuck
+            labels:
+                - Talent
+                - Once per combat
+            effect: >
+                You can spend your momentum to pull off a daring stunt the likes of which 
+                others could scarcely conceive. No roll necessary, it just works. You can 
+                make an attack as part of the stunt, but you'll need to roll normally for that.
+        filthattack:
+            name: Filthy Attack
+            command: filthattack
+            labels:
+                - Talent
+            effect: >
+                Your Dirty Attack damage is even dirtier than other rogues. You use one
+                dice size bigger.
+        tumble:
+            name: Tumble
+            command: tumble
+            labels:
+                - Talent
+            effect: >
+                Whenever you take a crit, roll a hard save. If you succeed, you somehow
+                tumbled out of the way of whatever was about to hit you.
+    actives:
+        evasivestrike:
+            name: Evasive Strike
+            command: evastrike
+            labels:
+                - Scheme
+                - Mayor action
+                - Unlimited uses
+            attack: DEX vs FORT
+            hit: Weapon + Dex damage
+            effect: If you hit on a natural even, you gain a +2 bonus to Fort and Ref against the next attack that targets you (no joy if it’s an attack vs. Will)
+            damage: d8 + DEX
+        flyingblade:
+            name: Flying Blade
+            command: fblade
+            labels:
+                - Scheme
+                - Mayor action
+                - Unlimited uses
+            special: Ranged attack only
+            attack: DEX vs FORT
+            hit: Weapon + Dex damage
+            effect:  If your natural attack roll is even, you can use your Dirty Attack damage bonus
+            damage: d8 + DEX
+        rollwithit:
+            name: Roll With It
+            command: rollit
+            labels:
+                - Scheme
+                - Mayor action
+                - Unlimited uses
+            special: Needs momentum.
+            trigger: An attack hits you
+            effect: You only take half damage from that attack
+        tumblingstrike:
+            name: Tumbling Strike
+            command: tumbstrike
+            labels:
+                - Scheme
+                - Mayor action
+                - Unlimited uses
+            special: >
+                You can take two move actions along with this attack, one before, and 
+                one immediately after. The foe can't strike you back during this 
+                attack.
+            attack: DEX vs FORT
+            hit: Weapon + Dex damage
+            damage: d8 + DEX
