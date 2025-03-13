@@ -5,13 +5,13 @@ export function aliasMaker(ability, user, stats) {
     const title = `## ${user} uses ${name}\\n`;
     const label = labels.length ? `**${labels.join(' 🔸 ')}**\\n\\n` : "";
 
-    const limitedText = limited ? `**Limited:** ${limited}\\n` : "";
-    const targetText = target ? `**Target:** ${target}\\n` : "";
+    const limitedText = limited ? `**Limited:** ${limited.trim()}\\n` : "";
+    const targetText = target ? `**Target:** ${target.trim()}\\n` : "";
     const specialText = special ? `**Special:** ${special.trim()}\\n` : "";
     const triggerText = trigger ? `**Trigger:** ${trigger.trim()}\\n` : "";
-    const attackText = attack ? `**Attack:** ${attack}\\n` : "";
-    const hitText = hit ? `**Hit:** ${hit}\\n` : "";
-    const missText = hit ? `**Miss:** ${miss}\\n` : "";
+    const attackText = attack ? `**Attack:** ${attack.trim()}\\n` : "";
+    const hitText = hit ? `**Hit:** ${hit.trim()}\\n` : "";
+    const missText = hit ? `**Miss:** ${miss.trim()}\\n` : "";
     const effectText = effect ? `**Effect:** ${effect.trim()}\\n` : "";
 
     const atk = processAttack(attack, stats);
