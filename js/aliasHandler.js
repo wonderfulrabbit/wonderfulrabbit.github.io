@@ -18,7 +18,7 @@ export function aliasMaker(ability, user, stats) {
     const dmg = processDamage(damage, stats);
 
     return [
-        `$alias ${command} embed`,
+        `$tembed`,
         `<drac2>`,
         `Title = "${title}"`,
         `Label = "${label}"`,

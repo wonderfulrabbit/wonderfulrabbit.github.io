@@ -39,6 +39,12 @@ darwin:
             desc: >
                 I am well known for my ability to mediate in a conflict and tend to get 
                 along well with everyone.
+    weapon:
+        hammer:
+            name: "Hammer: Faith in Humanity"
+            stat: WIS
+            defense: WILL
+            damage: d6
 midas:
     name: Midas
     player: Prof. Midas
@@ -138,3 +144,36 @@ bun:
             value: 0
             adj: Has game
             desc: Hello Ladies *wink*
+maximus:
+    name: Maximus
+    player: Shin
+    level: 1
+    attributes:
+        culture: Dragonborn
+        class: Eldcaller
+        alignment: Savagery
+        stats:
+            str:
+                value: 1
+                adj: Weak
+                desc: I'm weak
+            dex:
+                value: 4
+                adj: Quick
+                desc: I'm quick
+            con:
+                value: 3
+                adj: Healthy
+                desc: I'm healthy
+            int:
+                value: 2
+                adj: Went to school
+                desc: I went to school
+            wis:
+                value: 0
+                adj: Not wise
+                desc: I'm not wise
+            cha:
+                value: 5
+                adj: Charismatic
+                desc: I'm charismatic

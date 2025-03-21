@@ -40,3 +40,17 @@ commander:
     fort: 12
     ref: 10
     will: 12
+berserker:
+    name: Berserker
+    hp: 7
+    dice: 8
+    fort: 12
+    ref: 10
+    will: 12
+eldcaller:
+    name: Eldcaller
+    hp: 7
+    dice: 10
+    fort: 13
+    ref: 10
+    will: 11

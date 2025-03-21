@@ -366,3 +366,63 @@ buk:
             attack: DEX vs FORT
             hit: Weapon + Dex damage
             damage: d8 + DEX
+maximus:
+    passives:
+        revered:
+            name: Revered Spirits
+            command: spirits
+            labels:
+                - Rule
+            effect: Revered Spirits are the spirits of mostly benevolent beings. They accompany you and give their benefits at all time
+        indwellments:
+            name: Indwellments
+            command: indwellments
+            labels:
+                - Rule
+            effect: >
+                After each full heal-up, an Eldcaller has a full complement of Indwellment points equal to 2 +
+                her Charisma modifier. You will spend these points to fuel your other abilities.
+        majorcallings:
+            name: Major Callings
+            command: majorcallings
+            labels:
+                - Rule
+            effect: >
+                At the start of combat, choose a Major Calling to bind. That Calling gives you an ongoing benefit
+                while you have it bound. When you roll a 7-13 on an attack, you must Bargain with it.
+        bargaining:
+            name: Bargaining with a Major Calling
+            command: bargain
+            labels:
+                - Rule
+            effect: >
+                Roll 2d6 keep the highest result. Then, on a 1-4, the Bargain fails and you
+                must bind another Calling. On a 5, you remain in control. On a 6, you remain in control and can demand a Boon from it. You can also spend an Indwellment
+                to Bargain, choosing any die as the result.
+        shepherd:
+            name: Shepherd of the Unsleeping
+            command: shepherd
+            labels:
+                - Outside of combat
+            effect: >
+                When you encounter a corpse that has been dead less than three days you may spend one Indwellment to perform a Minor Calling and speak to it
+                as if it were still alive.
+        justiciar:
+            name: The Justiciar
+            command: justiciar
+            labels:
+                - Revered Spirit
+            special: >
+                The emperor of the Drakken Dominion, who reunited all the rebellious lands through the power of his army and made the first
+                set of laws. He also made codified the rules for adventurers that now form the foundation of the Adventurer's Guild, even
+                if his name has been forgotten.
+            effect: >
+                Gives you +2 extra Fort.
+        the messenger:
+            name: The Messenger
+            command: messenger
+            labels:
+                - Revered Spirit
+            effect: who knows
+
+            
