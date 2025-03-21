@@ -366,6 +366,9 @@ buk:
             attack: DEX vs FORT
             hit: Weapon + Dex damage
             damage: d8 + DEX
+bun:
+    passives:
+    actives:
 maximus:
     passives:
         revered:
@@ -424,5 +427,6 @@ maximus:
             labels:
                 - Revered Spirit
             effect: who knows
+    actives:
 
             
