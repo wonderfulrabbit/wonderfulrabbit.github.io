@@ -39,12 +39,7 @@ darwin:
             desc: >
                 I am well known for my ability to mediate in a conflict and tend to get 
                 along well with everyone.
-    weapon:
-        hammer:
-            name: "Hammer: Faith in Humanity"
-            stat: WIS
-            defense: WILL
-            damage: d6
+                
 midas:
     name: Midas
     player: Prof. Midas
@@ -78,7 +73,7 @@ midas:
             value: 5
             adj: Master manipulator
             desc: I can lie as naturally as i breathe, motivate people to extremes.
-            
+
 buk:
     name: Buk
     player: Marley

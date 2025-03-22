@@ -519,7 +519,7 @@ maximus:
                 set of laws. He also made codified the rules for adventurers that now form the foundation of the Adventurer's Guild, even
                 if his name has been forgotten.
             effect: >
-                Gives you +2 extra Fort.
+                Gives you +2 extra REF.
         messenger:
             name: The Messenger
             labels:
