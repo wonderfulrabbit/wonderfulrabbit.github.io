@@ -500,7 +500,7 @@ maximus:
                 must bind another Calling. On a 5, you remain in control. On a 6, you remain in control and can demand a Boon from it. 
             extra: >
                 You can also spend an Indwellment
-                to Bargain, choosing any die as the result.
+                to start a Bargain, choosing any die as the result.
         shepherd:
             name: Shepherd of the Unsleeping
             labels:
