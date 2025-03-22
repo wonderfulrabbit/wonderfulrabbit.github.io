@@ -1,0 +1,131 @@
+darwin:
+    coin: 2
+    lifestyle: 1
+    kit: 3
+    backpack: Nothing.
+    weapons:
+        hammer:
+            name: Hammer "Faith in Humanity"
+            labels:
+                - Melee (Two handed)
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: WIS
+            weapondice: d6
+            defense: REF
+            miss: Damage equal to your level
+
+midas:
+    coin: 3
+    lifestyle: 2
+    kit: 1
+    backpack: Nothing
+    weapons:
+        katana:
+            name: Katana
+            labels:
+                - Melee
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: DEX
+            weapondice: d6
+            defense: REF
+            miss: Damage equal to your level
+
+buk:
+    coin: 2
+    lifestyle: 1
+    kit: 3
+    backpack: Nothing
+    weapons:
+        wickedknife:
+            name: Wicked Knife
+            labels:
+                - Melee
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: DEX
+            weapondice: d8
+            defense: REF
+            miss: Damage equal to your level
+        throwingdagger:
+            name: Throwing Dagger
+            labels:
+                - Ranged
+                - Major action
+                - Unlimited uses
+            target: One nearby enemy
+            stat: DEX
+            weapondice: d6
+            defense: REF
+            misss: Damage equal to your level
+
+bun:
+    coin: 2
+    lifestyle: 1
+    kit: 3
+    backpack: Nothing.
+    weapons:
+        staff:
+            name: Staff
+            labels:
+                - Melee (Two handed)
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: STR
+            weapondice: d6
+            defense: REF
+            miss: Damage equal to your level
+
+maximus:
+    coin: 1
+    lifestyle: 3
+    kit: 2
+    backpack: Nothing.
+    weapons:
+        billhook:
+            name: Billhook
+            labels:
+                - Melee (Two handed)
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: DEX
+            weapondice: d8
+            defense: REF
+            miss: Damage equal to your level
+
+grawluk:
+    coin: 3
+    lifestyle: 2
+    kit: 1
+    backpack: Nothing.
+    weapons:
+        dualblades:
+            name: Dual Blades
+            labels:
+                - Melee (dual wielding)
+                - Major action
+                - Unlimited uses
+            target: One engaged enemy
+            stat: STR
+            weapondice: d8
+            defense: REF
+            miss: Damage equal to your level
+            extra:  >
+                If your attack roll is a natural 2, you can
+                reroll the attack but must use the reroll.
+        throwingaxe:
+            name: Throwing Axe
+            labels:
+                - Ranged
+                - Major action
+                - Unlimited uses
+            target: One nearby enemy
+            stat: DEX
+            weapondice: d6
+        

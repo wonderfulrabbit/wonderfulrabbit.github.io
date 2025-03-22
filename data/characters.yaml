@@ -78,6 +78,7 @@ midas:
             value: 5
             adj: Master manipulator
             desc: I can lie as naturally as i breathe, motivate people to extremes.
+            
 buk:
     name: Buk
     player: Marley
@@ -111,69 +112,105 @@ buk:
             value: 0
             adj: Bad liar
             desc:  ii can lie yee yes sometime...
+
 bun:
     name: Bun
     player: Azure
     level: 1
     attributes:
         culture: Beastfolk
-        class: Mage
+        class: Sorcerer
         alignment: Nature
     stats:
         str:
             value: 0
             adj: Weak at fighting
-            desc: Bruh, I would lose in a fist fight with a kid
+            desc: Bruh, I'd lose a fistfight with a kid.
         dex:
-            value: 5
-            adj: Old
-            desc: I think I'm a grandfather now... *get off my lawn!*
-        con:
-            value: 2
-            adj: Soft
-            desc: Soft as a Pillow
-        int:
-            value: 1
-            adj: Arcane researcher
-            desc: Curiosity with the arcane combined with tradition sure helps
-        wis:
             value: 4
-            adj: Has a Phd
-            desc: Lived long enough to know lots of things and got me my PhD in Alfheim University
+            adj: Quick
+            desc: Yeah, I'm a rabbit. What did you expect?
+        con:
+            value: 1
+            adj: Soft
+            desc: Soft as a pillow.
+        int:
+            value: 5
+            adj: Arcane studies
+            desc: Curiosity of the arcane sure helps
+        wis:
+            value: 3
+            adj: Common sense
+            desc: Why is everyone else so crazy?
         cha:
-            value: 0
-            adj: Has game
-            desc: Hello Ladies *wink*
+            value: 2
+            adj: Has no game
+            desc: Hello, ladies.
+
 maximus:
-    name: Maximus
+    name: Maximus Pendragon
     player: Shin
     level: 1
     attributes:
         culture: Dragonborn
         class: Eldcaller
         alignment: Savagery
-        stats:
-            str:
-                value: 1
-                adj: Weak
-                desc: I'm weak
-            dex:
-                value: 4
-                adj: Quick
-                desc: I'm quick
-            con:
-                value: 3
-                adj: Healthy
-                desc: I'm healthy
-            int:
-                value: 2
-                adj: Went to school
-                desc: I went to school
-            wis:
-                value: 0
-                adj: Not wise
-                desc: I'm not wise
-            cha:
-                value: 5
-                adj: Charismatic
-                desc: I'm charismatic
+    stats:
+        str:
+            value: 1
+            adj: Weak
+            desc: I may not be strong, but I know how to pick my fights.
+        dex:
+            value: 4
+            adj: Quick
+            desc: Fast on my feet, faster in battle.
+        con:
+            value: 3
+            adj: Healthy
+            desc: Strong enough to take a hit and keep going.
+        int:
+            value: 2
+            adj: Went to school
+            desc: I paid attention in class... sometimes.
+        wis:
+            value: 0
+            adj: Not wise
+            desc: Thinking ahead is for people with fewer options.
+        cha:
+            value: 5
+            adj: Charismatic
+            desc: When I speak, people listen.
+
+grawluk:
+    name: Grawluk
+    player: Grag
+    level: 1
+    attributes:
+        culture: Human (Northern tribes)
+        class: Barbarian
+        alignment: Savagery
+    stats:
+        str:
+            value: 5
+            adj: Smash
+            desc: Smash
+        dex:
+            value: 3
+            adj: Smash?
+            desc: Need to know how to smash
+        con:
+            value: 4
+            adj: Resilient
+            desc: Punny bullets tickles
+        int:
+            value: 0
+            adj: No formal education
+            desc: Doesn't know difficult words or concepts.
+        wis:
+            value: 1
+            adj: Recognizes allies
+            desc: Can make the difference between friend and enemy, not much else. Also simple "Me smash you!"
+        cha:
+            value: 2
+            adj: Atractive
+            desc: Muscles looks good and spooky

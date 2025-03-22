@@ -11,19 +11,17 @@ export function contentMaker(e) {
         e.attack ? `<b>Attack:</b> ${e.attack}` : "", 
         e.hit ? `<b>Hit:</b> ${e.hit}` : "", 
         e.miss ? `<b>Miss:</b> ${e.miss}` : "", 
-        e.effect ? `<b>Effect:</b> ${e.effect}` : ""
+        e.effect ? `<b>Effect:</b> ${e.effect}` : "",
+        e.extra ? `<b>Extra:</b> ${e.extra}` : ""
     ].filter(Boolean).join("<br>");
 }
 
-export function createCopyButton(onClick) {
-    const footer = document.createElement("footer");
-    footer.setAttribute("role", "button");
-    footer.classList.add("contrast");
-
-    const icon = document.createElement("i");
-    icon.classList.add("fa-solid", "fa-copy");
-
-    footer.appendChild(icon);
-    footer.addEventListener("click", onClick);
-    return footer;
+export function weaponMaker(e) {
+    return [
+        `<b>Target:</b> ${e.target}`, 
+        `<b>Attack:</b> ${e.stat} vs ${e.defense}`, 
+        `<b>Hit:</b> LEVEL x ${e.weapondice} + ${e.stat} damage`, 
+        e.miss ? `<b>Miss:</b> ${e.miss}` : "",
+        e.extra ? `<b>Extra:</b> ${e.extra}` : ""
+    ].filter(Boolean).join("<br>");
 }

@@ -1,5 +1,5 @@
-import { updateBasicInfo, updateStats, updateCombatStats, updateTooltips, updateDefenses, updateEntries } from "./uiUpdater.js";
-import { characters, classes, abilities } from "./dataLoader.js";
+import { updateBasicInfo, updateStats, updateCombatStats, updateTooltips, updateDefenses, updateEntries, updateAssets } from "./uiUpdater.js";
+import { characters, classes, abilities, assets } from "./dataLoader.js";
 
 export function updateCharacterSelect(charactersList) {
     const dropdown = document.getElementById("character-select");
@@ -20,7 +20,7 @@ export function updateCharacterSelect(charactersList) {
 
 export function changeCharacter(name) {
     const character = characters[name];
-    let characterClass, characterAbility;
+    let characterClass, characterAbility, asset;
 
     Object.entries(classes).forEach(([_, value]) => {
         if (value.name === character.attributes.class) {
@@ -34,6 +34,12 @@ export function changeCharacter(name) {
         }
     });
 
+    Object.entries(assets).forEach(([assetGroup, value]) => {
+        if (assetGroup === name) {
+            asset = value;
+        }
+    });
+
     updateBasicInfo(character);
     updateStats(character.stats);
     updateCombatStats(character.stats, characterClass, character.level);
@@ -41,4 +47,5 @@ export function changeCharacter(name) {
     updateEntries("#section-actives", characterAbility.actives, character.name, character.stats);
     updateTooltips(character.stats, characterClass, character.level);
     updateDefenses(character.stats, characterClass, character.level);
+    updateAssets(asset, character.name, character.level, character.stats)
 }

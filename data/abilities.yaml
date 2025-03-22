@@ -2,19 +2,11 @@ darwin:
     passives:
         prayers:
             name: Prayers
-            command: prayerrule
             labels:
                 - Rule
             effect: > 
                 You get to pick 4 prayers. You can change the prayers you have picked after each
                 proper rest. 
-        ritualmagic:
-            name: Ritual Magic
-            command: ritual
-            labels:
-                - Rule
-                - Outside of combat
-            effect: You can perform your prayers as rituals.
         ritual:
             name: Ritual
             command: ritualrule
@@ -29,18 +21,24 @@ darwin:
                 outcomes that are outgrowths of the spell's normal effects. The effects don’t have
                 to play within the usual constraints of the magic system, and they don't have to be
                 taken as a precedent for future rituals. Failure should fail forward as usual.
+        ritualmagic:
+            name: Ritual Magic
+            labels:
+                - Feature
+                - Outside of combat
+            effect: You can perform your prayers as rituals.
         mercy:
             name: Mercy Domain
-            command: mercy
             labels:
+                - Feature
                 - Greater domain
             effect: >
                 When you use any ability that lets you or an ally use a recovery, it also adds hit
                 points equal to triple your level.
         protection:
             name: Protection Domain
-            command: protection
             labels:
+                - Feature
                 - Lesser domain
             effect: >
                 Once per combat, you can affect two additional allies when you utter a prayer as a
@@ -48,15 +46,32 @@ darwin:
     actives:
         healingword:
             name: Healing Word
-            command: healing
             labels:
+                - Feature
                 - Prayer
                 - Minor action
                 - Twice per combat
             effect: You or one ally within arm's reach can use a recovery.
+        mercyinvocation:
+            name: Mercy Invocation
+            labels:
+                - Feature
+                - Greater Invocation
+                - Free action
+                - Twice between rests
+            effect: > 
+                This combat, the first Healing Word you utter allows the target to use a free 
+                recovery instead of spending one.
+        protectioninvocation:
+            name: Protection Invocation
+            labels:
+                - Feature
+                - Lesser Invocation
+                - Free action
+                - Once between rests
+            effect: This combat, crits against you and your Guild deal normal damage instead.
         bless:
             name: Bless
-            command: blessprayer
             labels:
                 - Prayer
                 - Minor action
@@ -67,7 +82,6 @@ darwin:
                 a Sermon, the Guild gains a +1 attack bonus until the end of the combat
         curewound:
             name: Cure Wounds
-            command: curewound
             labels:
                 - Prayer
                 - Minor action
@@ -75,7 +89,6 @@ darwin:
             effect: You or an ally can use a free recovery.
         hammerfaith:
             name: Hammer of Faith
-            command: hamfaith
             labels:
                 - Prayer
                 - Mayor action
@@ -85,8 +98,8 @@ darwin:
                 dice.
         javelinfaith:
             name: Javelin of Faith
-            command: javfaith
             labels:
+                - Unprepared
                 - Prayer
                 - Mayor action
                 - Unlimited uses
@@ -95,7 +108,6 @@ darwin:
             damage: 1d6 + WIS
         shieldfaith:
             name: Shield of Faith
-            command: shieldfaith
             labels:
                 - Prayer
                 - Minor action
@@ -105,8 +117,8 @@ darwin:
                 a Sermon, The Guild gains a +1 bonus to Fort this combat
         spiritsrighteous:
             name: Spirits of the Righteous
-            command: spiritsright
             labels:
+                - Unprepared
                 - Prayer
                 - Mayor action
                 - Once per combat
@@ -120,8 +132,8 @@ darwin:
             damage: 4d6 + WIS
         exorcism:
             name: Exorcism
-            command: exorcism
             labels:
+                - Unprepared
                 - Prayer
                 - Mayor action
                 - Once between rests
@@ -133,35 +145,16 @@ darwin:
                 points, and dazed and confused. Against minions, the 8+ result now destroys
                 4 of them. Hit by 12+ or natural 20, Against non-minions, the foe is destroyed.
                 Against minions, the +12 result now destroys 8 of them.
-        mercyinvocation:
-            name: Mercy Invocation
-            command: merinvocation
-            labels:
-                - Invocation
-                - Free action
-                - Twice between rests
-            effect: > 
-                This combat, the first Healing Word you utter allows the target to use a free 
-                recovery instead of spending one.
-        protectioninvocation:
-            name: Protection Invocation
-            command: proinvocation
-            labels:
-                - Invocation
-                - Free action
-                - Once between rests
-            effect: This combat, crits against you and your Guild deal normal damage instead.
+
 midas:
     passives:
         leadpoints:
             name: Command Points
-            command: leapoints
             labels:
                 - Rule
             effect: You start each combat with 1 CP. At the end of the combat, excess CP go away
         tactics:
             name: Tactics
-            command: tactics
             labels: 
                 - Rule
             effect: >
@@ -169,7 +162,6 @@ midas:
                 ally's go to use them.
         replenishabilities:
             name: Replenish Abilities
-            command: replenish
             labels: 
                 - Rule
             effect: >
@@ -180,7 +172,6 @@ midas:
                 again on its own, no need to roll.
         fightfront:
             name: Fight from the Front
-            command: figfront
             labels:
                 - Passive
             effect: >
@@ -188,14 +179,12 @@ midas:
                 gain 1 LP.
         armourskls:
             name: Armour Skills
-            command: armskills
             labels:
                 - Talent
                 - Unlimited uses
             effect: When a foe attacks you and rolls a natural 1 or 2, you gain 1 CP.
         batcaptain:
             name: Battle Captain
-            command: batcaptain
             labels:
                 - Talent
                 - Once per combat
@@ -204,7 +193,6 @@ midas:
                 command on a different ally's go before the start of your next go.
         marttraining:
             name: Martial training
-            command: martraining
             labels:
                 - Talent
                 - Unlimited uses
@@ -214,14 +202,12 @@ midas:
     actives:
         weightodds:
             name: Weigh the Odds
-            command: weiodds
             labels:
                 - Mayor action
                 - Unlimited uses
             effect: Gain 1d4 + Cha CP.
         tryagain:
             name: Try Again
-            command: tryagain
             labels:
                 - Command
                 - Cost 2 CP
@@ -230,7 +216,6 @@ midas:
             effect: One ally gets advantage on an attack. If either roll comes up a 20, you gain 1 CP.
         tacticalstrike:
             name: Tactical Strike
-            command: tacstrike
             labels:
                 - Tactic
                 - Minor action
@@ -238,7 +223,6 @@ midas:
             effect: One ally can make an attack as a free action, with your Cha as a damage bonus.
         outmanoeuvre:
             name: Outmanoeuvre
-            command: outmanov
             labels:
                 - Tactic
                 - Minor action
@@ -249,36 +233,16 @@ midas:
             hit: You gain 1 CP.
         enforceclarity:
             name: Enforce Clarity
-            command: enfclarity
             labels:
                 - Tactic
                 - Save to replenish
                 - Minor action
             effect: One condition on an ally ends.
+
 buk:
     passives:
-        dirtyattack:
-            name: Dirty attack
-            command: dirtyatk
-            labels:
-                - Rule
-                - Once per round
-            effect: >
-                When you hit a foe faced with one or more of your allies, you can deal 1d4 extra 
-                damage.
-            damage: 1d6
-        trapsense:
-            name: Trap sense
-            command: trapsen
-            labels:
-                - Rule
-            effect: >
-                If your check involving a trap is a natural even failure, you can reroll.
-                If a trap's attack against you is a natural odd roll, you can force the trap 
-                to reroll the attack once.
         momentum:
             name: Momentum
-            command: momentum
             labels:
                 - Rule
             effect: >
@@ -286,15 +250,30 @@ buk:
                 when you are hit by an attack.
         schemes:
             name: Schemes
-            command: schemes
             labels:
                 - Rule
             effect:  >
-                You have 4 schemesYou can swap schemes whenever you do level up, or
+                You have 4 schemes. You can swap schemes whenever you do level up, or
                 whenever you're not actually mid-charter.
+        dirtyattack:
+            name: Dirty attack
+            labels:
+                - Feature
+                - Once per round
+            effect: >
+                When you hit a foe faced with one or more of your allies, you can deal 1d4 extra 
+                damage.
+            damage: 1d6
+        trapsense:
+            name: Trap sense
+            labels:
+                - Feature
+            effect: >
+                If your check involving a trap is a natural even failure, you can reroll.
+                If a trap's attack against you is a natural odd roll, you can force the trap 
+                to reroll the attack once.
         swashbuckle:
             name: Swashbuckle
-            command: swashbuck
             labels:
                 - Talent
                 - Once per combat
@@ -304,7 +283,6 @@ buk:
                 make an attack as part of the stunt, but you'll need to roll normally for that.
         filthattack:
             name: Filthy Attack
-            command: filthattack
             labels:
                 - Talent
             effect: >
@@ -312,7 +290,6 @@ buk:
                 dice size bigger.
         tumble:
             name: Tumble
-            command: tumble
             labels:
                 - Talent
             effect: >
@@ -321,7 +298,6 @@ buk:
     actives:
         evasivestrike:
             name: Evasive Strike
-            command: evastrike
             labels:
                 - Scheme
                 - Mayor action
@@ -332,7 +308,6 @@ buk:
             damage: d8 + DEX
         flyingblade:
             name: Flying Blade
-            command: fblade
             labels:
                 - Scheme
                 - Mayor action
@@ -344,7 +319,6 @@ buk:
             damage: d8 + DEX
         rollwithit:
             name: Roll With It
-            command: rollit
             labels:
                 - Scheme
                 - Mayor action
@@ -354,7 +328,6 @@ buk:
             effect: You only take half damage from that attack
         tumblingstrike:
             name: Tumbling Strike
-            command: tumbstrike
             labels:
                 - Scheme
                 - Mayor action
@@ -366,17 +339,143 @@ buk:
             attack: DEX vs FORT
             hit: Weapon + Dex damage
             damage: d8 + DEX
+
 bun:
     passives:
+        explosion:
+            name: Explosion
+            labels:
+                - Rule
+            effect: >
+                Some spells have the Explosion tag. At the start of each turn after having used an Explosion spell, roll a d20 and compare
+                it to the listed recharge number. On a success, you can use it again this turn as a major action. After the battle, the spell
+                is expended until a proper rest. Casting a different Explosion spell replaces the recharge of the previous one.
+        chain:
+            name: Chain
+            labels:
+                - Rule
+            effect: >
+                Some spells have the Chain tag. If you get a natural even roll, you can attack again against a different enemy within range. 
+                Keep rolling as long as you get even rolls.
+        arcaneequilibrium:
+            name: Arcane Equilibrium
+            labels:
+                - Talent
+            effect: >
+                You can have multiple Explosion Recharges active at the same time, and each turn you roll for each one.
+                You don't gain extra major actions, so if you succeed with multiple recharges, you'll generally have
+                to choose which one to use
+        explosionaffinity:
+            name: Explosion Affinity
+            labels:
+                - Talent
+            effect: >
+                You get a +2 bonus to your Explosion Recharge rolls
+        arcanestudies:
+            name: Arcane Studies
+            labels:
+                - Talent
+            effect: >
+                You gain +2 Willpower. Use your Intelligence instead of Charisma for all your spells.
+                You can switch one Sorcerer spell for another after each proper rest.
     actives:
+        gatherpower:
+            name: Gather Power
+            labels:
+                - Feature
+                - Major action
+                - Unlimited uses
+            effect: >
+                Until the end of your next turn, your next spell is empowered. An empowered spell deals damage.
+                Additionally, roll a d6 to gain one small benefit: On a 1-2, you gain a +1 bonus to Reflex.
+                On a 3-4, you deal damage equal to your level to all Bloodied enemies within Stone's throw.
+                On a 5-6, one enemy within Stone's Throw range takes damage equal to your level.
+        dancinglights:
+            name: Dancing Lights
+            labels:
+                - Feature
+                - Major action
+                - Unlimited uses
+            effect: >
+                Produces a number of varicolored light globes that bloom in the area every two to five seconds. 
+                The Sorcerer has very little control over the exact location or illumination provided by the lights.
+        fireexplosion:
+            name: Fire Explosion
+            labels:
+                - Spell
+                - Explosion
+                - Major action
+                - Recharge
+            special: Recharge 16+ each turn
+            target: 1d3 nearby targets in a group
+            attack: INT vs FORT
+            hit: 3d6 + INT damage
+            miss: half damage
+            damage: 3d6 + INT
+        burninghands:
+            name: Burning Hands
+            labels:
+                - Spell
+                - Major action
+                - Unlimited uses
+            target: Up to two nearby enemies in a group
+            attack: INT vs FORT
+            hit: 1d6 + INT damage
+            damage: 1d6 + INT
+        chaosbolt:
+            name: Chaos Bolt
+            labels:
+                - Spell
+                - Major action
+                - Unlimited uses
+            target:  One nearby enemy, or one far away enemy within Shouting distance with a -2 attack penalty
+            attack: INT vs FORT
+            hit: 1d8 + INT, and if the natural attack roll was even, roll d6 tp get a Chaos Benefit as if you had used Gather Power.
+            miss: Damage equal to your level
+            damage: 1d8 + INT
+        lightningfork:
+            name: Lightning Fork
+            labels:
+                - Unprepared
+                - Spell
+                - Chain
+                - Major action
+                - Recharge
+            special: Recharge 16+ after battle
+            target: One nearby enemy
+            attack: INT vs FORT
+            hit: 3d6 + INT
+            miss: Half damage
+            damage: 3d6 + INT
+        resistharm:
+            name: Protection
+            labels:
+                - Unprepared
+                - Spell
+                - Major action
+                - Recharge
+            special: Recharge 16+ after battle
+            target: You or one nearby enemy
+            effect: Until the end of the battle, the target gain resist damage 12+ agains one kind of magical harm you choose.
+        scorchingray:
+            name: Scorching Ray
+            labels:
+                - Spell
+                - Major action
+                - Unlimited uses
+            target: One enemy within Stone's throw
+            attack: INT vs FORT
+            hit: 1d6 + INT damage. If the natural attack roll is even, the target also takes 1d8 ongoing damage.
+            miss: Damage equal to your level.
+            damage: 1d6 + INT
+
 maximus:
     passives:
         revered:
             name: Revered Spirits
-            command: spirits
             labels:
                 - Rule
-            effect: Revered Spirits are the spirits of mostly benevolent beings. They accompany you and give their benefits at all time
+            effect: Revered Spirits are the spirits of mostly benevolent beings. You can get the benefit of any of them at any time.
         indwellments:
             name: Indwellments
             command: indwellments
@@ -387,7 +486,6 @@ maximus:
                 her Charisma modifier. You will spend these points to fuel your other abilities.
         majorcallings:
             name: Major Callings
-            command: majorcallings
             labels:
                 - Rule
             effect: >
@@ -395,25 +493,26 @@ maximus:
                 while you have it bound. When you roll a 7-13 on an attack, you must Bargain with it.
         bargaining:
             name: Bargaining with a Major Calling
-            command: bargain
             labels:
                 - Rule
             effect: >
                 Roll 2d6 keep the highest result. Then, on a 1-4, the Bargain fails and you
-                must bind another Calling. On a 5, you remain in control. On a 6, you remain in control and can demand a Boon from it. You can also spend an Indwellment
+                must bind another Calling. On a 5, you remain in control. On a 6, you remain in control and can demand a Boon from it. 
+            extra: >
+                You can also spend an Indwellment
                 to Bargain, choosing any die as the result.
         shepherd:
             name: Shepherd of the Unsleeping
-            command: shepherd
             labels:
+                - Feature
                 - Outside of combat
             effect: >
                 When you encounter a corpse that has been dead less than three days you may spend one Indwellment to perform a Minor Calling and speak to it
                 as if it were still alive.
         justiciar:
             name: The Justiciar
-            command: justiciar
             labels:
+                - Spirit
                 - Revered Spirit
             special: >
                 The emperor of the Drakken Dominion, who reunited all the rebellious lands through the power of his army and made the first
@@ -421,12 +520,105 @@ maximus:
                 if his name has been forgotten.
             effect: >
                 Gives you +2 extra Fort.
-        the messenger:
+        messenger:
             name: The Messenger
-            command: messenger
             labels:
+                - Spirit
                 - Revered Spirit
-            effect: who knows
+            special: >
+                A warrior sent by the Gods, called the "Guild of One" for completing impossible quests without ever registering in the Adventurers' 
+                Guild. In the end, he sacrificed his immortality to defeat the dreaded Vampire Lord for all eternity.
+            effect: >
+                If you are engaged with enemies, and one of you moves away. They roll a Save (d6). On a fail (3-), 
+                they take the result as damage. If it is a lone enemy, you get a +1 bonus to your Save roll.
+        watchcaptain:
+            name: The Watch Captain
+            labels:
+                - Spirit
+                - Revered Spirit
+            special: >
+                A noble officer who slew a corrupt regent in a time when nobody else would stain their hand with royal blood.
+            effect: >
+                Spend an indwellment to automatically perceive the next 1d3 hidden or invisible creatures or traps you encounter
     actives:
+        vampirelord:
+            name: The Vampire Lord
+            labels:
+                - Spirit
+                - Major Calling
+            special: >
+                The father of all vampires, who nearly brought the Drakken Dominion to ruin before being defeated by the unlikely
+                alliance of the Messenger and the Justiciar.
+            effect: >
+                The first time in an encounter that each creature ends its turn engaged with you, its takes your level
+                in ongoing damage (save ends). 
+            extra: >
+                (Boon) One engaged enemy takes twice your level in ongoing damage
+                (save ends) and you or a nearby ally can spend a Recovery and gain twice that amount of HP.
+        caesar:
+            name: The Caesar
+            labels:
+                - Spirit
+                - Major Calling
+            special: >
+                An ancient king, who conquered half the world long before the rise of the Drakken Empire. He fell in battle
+                against Genghis' armies, and with his death, his empire crumbled, plunging the world into a dark age where might ruled.
+            effect: >
+                Gain a +1 to Fort while engaged with the same target
+                as an ally.
+            extra: >
+                (Boon) You summon a Spirit Legionnaire, who grants the same defense bonus to
+                one of your allies until they become Bloodied.
+        thoughtlord:
+            name: The Tought Lord
+            labels:
+                - Spirit
+                - Major Calling
+            special: >
+                Seven powerful psionicists who drained the power of all other psions during the Dark Age, making it rare skill.
+            effect: >
+                You can make your thoughts heard by your allies, hear thoughts directed at you and can easily facilitate psychic communication between up to 6 other
+                people. You may also attack their Will with your attacks.
+            extra: >
+                (Boon) You can insert one short sentence into the mind of a nearby non-allied and intelligent creature, which they will believe to be
+                their own thought for 24 hours.
 
-            
+grawluk:
+    passives:
+        strongheart:
+            name: Strongheart
+            labels:
+                - Talent
+            effect: >
+                Your recovery dice are d12s instead of d10s like other barbarians
+    actives:
+        barbarianrage:
+            name: Barbarian Rage
+            labels:
+                - Feature
+                - Minor action
+                - Once per day
+            special: After a battle in which you rage, roll d20 + CON. On a 16+, you recharge your Barbarian Rage
+            effect: > 
+                Start raging; a rage lasts until the end of battle. While raging, you roll 2d20 to hit with your weapon attacks instead of 1d20. Use the higher roll
+                for the attack. If you roll a natural 11+ with both dice and your
+                highest attack roll is a hit, the attack is a critical hit.
+        unstoppable:
+            name: Unstoppable
+            labels:
+                - Talent
+                - Free action
+                - Once per battle
+            effect: >
+                Declare you're using Unstoppable before making a barbarian melee attack. If your attack hits at least one target,
+                you can heal using a recovery.
+        cleave:
+            name: Barbaric Cleave
+            labels:
+                - Talent
+                - Free action
+                - Once per battle
+            limited: Can only be used after you drop a non-minion foe with a barbarian melee attack. Dropping the last minion of a group also qualifies.
+            effect: >
+                Make another barbarian melee attack.
+        

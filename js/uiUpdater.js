@@ -1,5 +1,5 @@
-import { middle, contentMaker, createCopyButton } from "./utils.js";
-import { aliasMaker } from "./aliasHandler.js";
+import { middle, contentMaker, weaponMaker} from "./utils.js";
+import { aliasMaker, aliasWeapon } from "./aliasHandler.js";
 
 export function updateBasicInfo(character) {
     document.querySelector('#character-name').value = character.name;
@@ -94,10 +94,24 @@ function createEntryElement(entry, user, stats) {
     const card = document.createElement("div");
     card.classList.add("card");
 
+    if (entry.labels.includes("Feature")) {
+        card.style.backgroundColor = "rgb(199, 120, 74)";
+    } else if (entry.labels.includes("Talent")) {
+        card.style.backgroundColor = " #537D8D";
+    } else if (entry.labels.includes("Unprepared")) {
+        card.style.backgroundColor = "rgb(167, 70, 70)";
+    } else if (entry.labels.includes("Spell")) {
+        card.style.backgroundColor = " #585ADA";
+    } else if (entry.labels.includes("Rule")) {
+        card.style.backgroundColor = "black";
+    } else if (entry.labels.includes("Prayer") || entry.labels.includes("Spirit") || entry.labels.includes("Scheme")) {
+        card.style.backgroundColor = " #0862A7";
+    }
+   
     card.innerHTML = `
         <div class="card-header">
           <div class="card-title">
-            <h3>${entry.name} 💲 ${entry.command}</h3>
+            <h3>${entry.name}</h3>
             <div class="tags">
             </div>
           </div>
@@ -126,6 +140,62 @@ function createEntryElement(entry, user, stats) {
     const button = card.querySelector('.copy-btn');
     button.addEventListener('click', () => {
         const alias = aliasMaker(entry, user, stats);
+        navigator.clipboard.writeText(alias);
+    });
+
+    return card;
+}
+
+export function updateAssets(asset, user, level, stats) {
+    document.querySelector('#stat-coin').innerHTML = asset.coin;
+    document.querySelector('#stat-lifestyle').innerHTML = asset.lifestyle;
+    document.querySelector('#stat-kit').innerHTML = asset.kit;
+    document.querySelector('#text-backpack').innerHTML = asset.backpack;
+
+    const container = document.querySelector("#weapon-attacks");
+    container.innerHTML = "";
+
+    Object.values(asset.weapons).forEach(weapon => {
+        container.appendChild(createWeaponAttack(weapon, user, level, stats));
+    });    
+}
+
+function createWeaponAttack(weapon, user, level, stats){
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+        <div class="card-header">
+          <div class="card-title">
+            <h3>${weapon.name}</h3>
+            <div class="tags">
+            </div>
+          </div>
+          <button class="copy-btn">
+            <i class="fas fa-copy"></i>
+          </button>
+        </div>
+        <div class="card-content">
+            ...     
+        </div>`;
+
+    const title = card.querySelector('.card-title');
+    const content = card.querySelector('.card-content');
+    content.style.display = 'none';
+    title.addEventListener('click', () => {
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+
+    const tags = card.querySelector('.tags');
+    weapon.labels?.forEach((label) => {
+        tags.innerHTML += `<div class="tag">${label}</div>`;
+    });
+
+    card.querySelector('.card-content').innerHTML = weaponMaker(weapon);    
+
+    const button = card.querySelector('.copy-btn');
+    button.addEventListener('click', () => {
+        const alias = aliasWeapon(weapon, user, level, stats);
         navigator.clipboard.writeText(alias);
     });
 

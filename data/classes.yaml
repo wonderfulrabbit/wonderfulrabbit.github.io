@@ -40,17 +40,24 @@ commander:
     fort: 12
     ref: 10
     will: 12
-berserker:
-    name: Berserker
-    hp: 7
-    dice: 8
-    fort: 12
+sorcerer:
+    name: Sorcerer
+    hp: 6
+    dice: 6
+    fort: 11
     ref: 10
-    will: 12
+    will: 10
 eldcaller:
     name: Eldcaller
     hp: 7
     dice: 10
-    fort: 13
-    ref: 10
+    fort: 10
+    ref: 13
     will: 11
+barbarian:
+    name: Barbarian
+    hp: 7
+    dice: 10
+    fort: 11
+    ref: 12
+    will: 10
