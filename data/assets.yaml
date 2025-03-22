@@ -5,7 +5,7 @@ darwin:
     backpack: Nothing.
     weapons:
         hammer:
-            name: Hammer "Faith in Humanity"
+            name: Hammer - Faith in Humanity
             labels:
                 - Melee (Two handed)
                 - Major action
