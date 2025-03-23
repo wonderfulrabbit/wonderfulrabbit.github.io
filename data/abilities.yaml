@@ -456,8 +456,8 @@ bun:
                 - Major action
                 - Recharge
             special: Recharge 16+ after battle
-            target: You or one nearby enemy
-            effect: Until the end of the battle, the target gain resist damage 12+ agains one kind of magical harm you choose.
+            target: You or one nearby ally
+            effect: Until the end of the battle, the target gain resist damage 12+ to the following energy type of your choice: cold, fire, lightning, thunder.
         scorchingray:
             name: Scorching Ray
             labels:
