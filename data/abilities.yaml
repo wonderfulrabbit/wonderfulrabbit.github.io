@@ -348,7 +348,7 @@ bun:
                 - Rule
             effect: >
                 Some spells have the Explosion tag. At the start of each turn after having used an Explosion spell, roll a d20 and compare
-                it to the listed recharge number. On a success, you can use it again this turn as a major action. After the battle, the spell
+                it to the listed recharge number. On a success, you can use reuse it this round as a major action. After the battle, the spell
                 is expended until a proper rest. Casting a different Explosion spell replaces the recharge of the previous one.
         chain:
             name: Chain
@@ -405,6 +405,7 @@ bun:
                 - Spell
                 - Explosion
                 - Major action
+                - Once per day
                 - Recharge
             special: Recharge 16+ each turn
             target: 1d3 nearby targets in a group
