@@ -61,7 +61,7 @@ buk:
             stat: DEX
             weapondice: d6
             defense: REF
-            misss: Damage equal to your level
+            miss: Damage equal to your level
 
 bun:
     coin: 2
